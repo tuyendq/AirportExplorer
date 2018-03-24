@@ -7,8 +7,25 @@
     <meta charset='utf-8' />
     <title>Airport Explorer</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />    
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%;}
+    </style>
 </head>
 <body>
-    <h1>Welcome to Airport Explorer</h1>
+    <div id='map'></div>
+
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+    <script>
+        // mapboxgl.accessToken = 'pk.eyJ1IjoidHV5ZW5kcSIsImEiOiJjamY1OXJxZGowdGp4MnduOHF4em5uc2xrIn0.kxo_s9_jA76qXgYFDOx6mw';
+        mapboxgl.accessToken = '@Model.MapboxAccessToken';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/light-v9'
+        });
+    </script>
+
 </body>
 </html>
